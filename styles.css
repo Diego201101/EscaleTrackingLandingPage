@@ -1,0 +1,208 @@
+/* Reset y variables */
+:root {
+  --primary-color: #000000;
+  --secondary-color: #E74C3C;
+  --text-color: #333;
+  --light-bg: #F9F9F9;
+  --white: #FFFFFF;
+  --orange-line: #FF6F00;
+  --badge-width: 180px;
+  --badge-height: 60px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Header */
+.main-header {
+  background-color: #2E8B57;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-line {
+  height: 4px;
+  background-color: var(--orange-line);
+  width: 100%;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.menu-icon, .user-icon {
+  height: 30px;
+  width: auto;
+  cursor: pointer;
+}
+
+/* Contenido principal */
+.main-content {
+  margin-top: 84px;
+  padding: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-image {
+  margin-bottom: 30px;
+  max-width: 100%;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  max-height: 60vh; /* Limita la altura máxima */
+  object-fit: cover; /* Asegura que la imagen se recorte adecuadamente */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.text-section h1 {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.text-section p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Sección de descargas */
+.download-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.download-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.download-badges {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.download-badges a {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  width: var(--badge-width);
+  height: var(--badge-height);
+}
+
+.download-badges a:hover {
+  transform: translateY(-5px);
+}
+
+.download-badges img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Ajuste específico para el badge de Google Play */
+.download-badges a:first-child img {
+  transform: scale(1.05); /* Compensa el espacio blanco */
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  :root {
+    --badge-width: 160px;
+    --badge-height: 54px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    padding: 12px 15px;
+  }
+  
+  .logo {
+    height: 35px;
+  }
+  
+  .menu-icon, .user-icon {
+    height: 25px;
+  }
+  
+  .main-content {
+    margin-top: 74px;
+  }
+  
+  .text-section h1 {
+    font-size: 1.8rem;
+  }
+  
+  :root {
+    --badge-width: 150px;
+    --badge-height: 50px;
+  }
+
+  .hero-image {
+    max-width: 800px; /* Limita el ancho máximo */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+  }
+  
+  .hero-image img {
+    max-height: 50vh; /* Altura más reducida en pantallas grandes */
+  }
+}
+
+@media (max-width: 480px) {
+  .download-badges {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  :root {
+    --badge-width: 180px;
+    --badge-height: 60px;
+  }
+
+  .hero-image {
+    max-width: 1000px;
+  }
+}
