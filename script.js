@@ -1,11 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const logo = document.getElementById('logo');
     
-    // Función para el menú hamburguesa
+    // Menú hamburguesa
     menuToggle.addEventListener('click', function() {
-        // Aquí puedes agregar la lógica para mostrar/ocultar un menú
-        console.log('Menú clickeado');
-        // Ejemplo: document.querySelector('.nav-menu').classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+    });
+    
+    // Refrescar página al hacer clic en el logo
+    logo.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = window.location.origin + window.location.pathname;
+    });
+    
+    // Cerrar menú al hacer clic en un enlace (para móviles)
+    const menuLinks = document.querySelectorAll('.mobile-menu a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
     });
     
     // Efectos para los badges de descarga
