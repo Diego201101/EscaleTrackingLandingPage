@@ -12,11 +12,34 @@
     <header class="main-header">
         <div class="header-content">
             <img src="assets/imagen3.png" alt="Menú" class="menu-icon" id="menuToggle">
-            <img src="assets/imagen1.png" alt="Escale Tracking Logo" class="logo">
-            <img src="assets/imagen2.png" alt="Usuario" class="user-icon">
+            <a href="#" class="logo-link">
+                <img src="assets/imagen1.png" alt="Escale Tracking Logo" class="logo" id="logo">
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#quienes-somos">Quiénes somos</a></li>
+                    <li><a href="#por-que-nosotros">Por qué escogernos</a></li>
+                    <li><a href="#descargar">Descárgalo ya</a></li>
+                    <li><a href="#empezar">Empezar</a></li>
+                </ul>
+            </nav>
+            <div class="login-container" style="display: flex; align-items: center; gap: 10px;">
+                <a href="https://diego201101.github.io/EscaleTrackingWebApplication/" style="color: white; text-decoration: none; font-weight: 500;">Iniciar Sesión</a>
+                <img src="assets/imagen2.png" alt="Usuario" class="user-icon">
+            </div>
         </div>
         <div class="header-line"></div>
     </header>
+
+    <!-- Menú móvil -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#quienes-somos">Quiénes somos</a></li>
+            <li><a href="#por-que-nosotros">Por qué escogernos</a></li>
+            <li><a href="#descargar">Descárgalo ya</a></li>
+            <li><a href="#empezar">Empezar</a></li>
+        </ul>
+    </div>
 
     <!-- Contenido Principal -->
     <main class="main-content">
@@ -31,8 +54,49 @@
             <p>Con EscaleTracking alcanzarás tus objetivos de forma eficiente. Sea cual sea tu nivel, EscaleTracking te da las herramientas necesarias para triunfar.</p>
         </section>
 
+        <!-- Sección Quiénes somos -->
+        <section class="info-section" id="quienes-somos">
+            <h2 class="section-title">Quiénes somos</h2>
+            <div class="info-content">
+                <div class="info-text">
+                    <p>Somos un equipo apasionado por el deporte y la tecnología, comprometidos con ayudar a los escaladores a alcanzar sus metas. Nuestra aplicación nació de la necesidad de tener un seguimiento preciso y herramientas profesionales accesibles para todos.</p>
+                    <p>Con años de experiencia tanto en desarrollo de software como en escalada profesional, hemos creado una solución que combina lo mejor de ambos mundos.</p>
+                </div>
+                <div class="info-image">
+                    <img src="assets/image7.png" alt="Equipo EscaleTracking" class="section-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Por qué escogernos -->
+        <section class="features-section" id="por-que-nosotros">
+            <h2 class="section-title">Por qué escogernos</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-chart-line feature-icon"></i>
+                    <h3>Seguimiento preciso</h3>
+                    <p>Registra y analiza cada detalle de tu progreso con nuestras herramientas avanzadas de tracking.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users feature-icon"></i>
+                    <h3>Comunidad activa</h3>
+                    <p>Conéctate con otros escaladores, comparte tus logros y aprende de los mejores.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cog feature-icon"></i>
+                    <h3>Personalización</h3>
+                    <p>Adapta la aplicación a tus necesidades específicas y estilo de escalada.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-medal feature-icon"></i>
+                    <h3>Experiencia probada</h3>
+                    <p>Desarrollada con el asesoramiento de escaladores profesionales de todo el mundo.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Sección de descargas -->
-        <section class="download-section">
+        <section class="download-section" id="descargar">
             <h2>Descárgalo ahora</h2>
             <div class="download-badges">
                 <a href="https://play.google.com/store/" target="_blank" rel="noopener noreferrer" class="badge-link">
@@ -45,6 +109,15 @@
                         <img src="assets/imagen6.png" alt="App Store" class="store-badge app-store-badge">
                     </div>
                 </a>
+            </div>
+        </section>
+
+        <!-- Sección Empezar -->
+        <section class="start-section spaced-section" id="empezar">
+            <h2 class="section-title">Empezar ahora</h2>
+            <div class="start-content">
+                <p>¿Listo para comenzar tu viaje de escalada? Regístrate ahora y obtén acceso inmediato a todas las herramientas que necesitas para mejorar tu rendimiento.</p>
+                <button class="start-button" onclick="location.href='https://diego201101.github.io/EscaleTrackingWebApplication/'">Comenzar</button>
             </div>
         </section>
     </main>
