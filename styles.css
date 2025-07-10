@@ -1,7 +1,7 @@
 /* Reset y variables */
 :root {
   --primary-color: #000000;
-  --secondary-color: #E74C3C;
+  --secondary-color: #FF6F00;
   --text-color: #333;
   --light-bg: #F9F9F9;
   --white: #FFFFFF;
@@ -21,6 +21,7 @@ body {
   background-color: var(--light-bg);
   color: var(--text-color);
   line-height: 1.6;
+  scroll-padding-top: 120px;
 }
 
 /* Header */
@@ -40,6 +41,7 @@ body {
   padding: 15px 20px;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
 }
 
 .header-line {
@@ -59,6 +61,118 @@ body {
   cursor: pointer;
 }
 
+.login-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 15px; /* Espacio del logo */
+}
+
+.login-container a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.login-container a:hover {
+  color: var(--orange-line);
+}
+
+/* Header y navegación */
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.desktop-nav {
+  display: block;
+}
+
+.desktop-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.desktop-nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.desktop-nav a:hover {
+  color: var(--orange-line);
+}
+
+.desktop-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--orange-line);
+  transition: width 0.3s ease;
+}
+
+.desktop-nav a:hover::after {
+  width: 100%;
+}
+
+/* Menú móvil */
+.mobile-menu {
+  position: fixed;
+  top: 84px;
+  left: -100%;
+  width: 70%;
+  height: calc(100vh - 84px);
+  background-color: #2E8B57;
+  z-index: 999;
+  transition: left 0.3s ease;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+.mobile-menu ul {
+  list-style: none;
+}
+
+.mobile-menu li {
+  margin-bottom: 20px;
+}
+
+.mobile-menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: block;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* Modifica las secciones objetivo */
+#quienes-somos, 
+#por-que-nosotros, 
+#descargar, 
+#empezar {
+  scroll-margin-top: 100px; /* Igual que el scroll-padding del body */
+  padding-top: 30px; /* Espacio interno adicional */
+  margin-top: -30px; /* Compensa el espacio añadido */
+}
+
 /* Contenido principal */
 .main-content {
   margin-top: 84px;
@@ -66,6 +180,7 @@ body {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  scroll-margin-top: 84px;
 }
 
 .hero-image {
@@ -76,8 +191,8 @@ body {
 .hero-image img {
   width: 100%;
   height: auto;
-  max-height: 60vh; /* Limita la altura máxima */
-  object-fit: cover; /* Asegura que la imagen se recorte adecuadamente */
+  max-height: 60vh;
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -98,6 +213,112 @@ body {
   color: #555;
   max-width: 600px;
   margin: 0 auto;
+}
+
+/* Secciones de información */
+.section-title {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--orange-line);
+}
+
+.info-section, .features-section, .start-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.info-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.info-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.info-text p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.info-image {
+  flex: 1;
+  min-width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.section-image:hover {
+  transform: scale(1.03);
+}
+
+/* Sección de características */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background-color: var(--white);
+  padding: 30px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.feature-card p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 /* Sección de descargas */
@@ -142,7 +363,57 @@ body {
 
 /* Ajuste específico para el badge de Google Play */
 .download-badges a:first-child img {
-  transform: scale(1.05); /* Compensa el espacio blanco */
+  transform: scale(1.05);
+}
+
+/* Sección Empezar */
+/* Espaciado para la sección */
+.spaced-section {
+  margin-top: 40px !important;
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+  position: relative;
+}
+
+/* Línea decorativa opcional para separar secciones */
+.spaced-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 400px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.start-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.start-content p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.start-button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #2E8B57;
+  transform: translateY(-3px);
 }
 
 /* Responsive */
@@ -151,9 +422,26 @@ body {
     --badge-width: 160px;
     --badge-height: 54px;
   }
+  
+  .desktop-nav ul {
+    gap: 15px;
+  }
 }
 
 @media (max-width: 768px) {
+  body {
+    scroll-padding-top: 90px; /* Un poco menos en móviles */
+  }
+    
+  #quienes-somos, 
+  #por-que-nosotros, 
+  #descargar, 
+  #empezar {
+    scroll-margin-top: 90px;
+    padding-top: 25px;
+    margin-top: -25px;
+  }
+  
   .header-content {
     padding: 12px 15px;
   }
@@ -180,14 +468,46 @@ body {
   }
 
   .hero-image {
-    max-width: 800px; /* Limita el ancho máximo */
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 20px;
   }
   
   .hero-image img {
-    max-height: 50vh; /* Altura más reducida en pantallas grandes */
+    max-height: 50vh;
+  }
+  
+  .desktop-nav {
+    display: none;
+  }
+  
+  .menu-icon {
+    display: block;
+    margin-left: 20px;
+  }
+  
+  .mobile-menu {
+    top: 74px;
+    height: calc(100vh - 74px);
+  }
+
+  .main-content {
+    margin-top: 74px;
+    scroll-margin-top: 74px; /* Ajuste para móviles */
+  }
+
+  .login-container a {
+    font-size: 0.9rem; /* Texto más pequeño en móviles */
+  }
+
+  .user-icon {
+    margin-right: 50px;
+  }
+
+  .login-container {
+    margin-left: -100px;
+    gap: 5px;
   }
 }
 
@@ -204,5 +524,26 @@ body {
 
   .hero-image {
     max-width: 1000px;
+  }
+  
+  .mobile-menu {
+    width: 70%;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .login-container {
+    margin-left: -70px;
+    gap: 5px;
+  }
+
+  .user-icon {
+    margin-right: 15px;
   }
 }
